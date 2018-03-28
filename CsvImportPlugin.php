@@ -178,8 +178,8 @@ class CsvImportPlugin extends Omeka_Plugin_AbstractPlugin
             set_option(CsvImport_ColumnMap_Element::ELEMENT_DELIMITER_OPTION_NAME, CsvImport_ColumnMap_Element::DEFAULT_ELEMENT_DELIMITER);
             set_option(CsvImport_ColumnMap_Tag::TAG_DELIMITER_OPTION_NAME, CsvImport_ColumnMap_Tag::DEFAULT_TAG_DELIMITER);
             set_option(CsvImport_ColumnMap_File::FILE_DELIMITER_OPTION_NAME, CsvImport_ColumnMap_File::DEFAULT_FILE_DELIMITER);
-        }   
-        
+        }
+
         if(version_compare($oldVersion, '2.0.1', '<=')) {
             $sql = "ALTER TABLE `{$db->prefix}csv_import_imports` CHANGE `item_type_id` `item_type_id` INT( 10 ) UNSIGNED NULL ,
                     CHANGE `collection_id` `collection_id` INT( 10 ) UNSIGNED NULL
@@ -209,6 +209,7 @@ class CsvImportPlugin extends Omeka_Plugin_AbstractPlugin
 
         // Hack to disable CRUD actions.
         $acl->deny(null, 'CsvImport_Index', array('show', 'add', 'edit', 'delete'));
+        // $acl->deny('admin', 'CsvImportPenn_Index'); TODO: is this necessary?  
     }
 
     /**

@@ -14,6 +14,7 @@ class CsvImport_ColumnMap_Element extends CsvImport_ColumnMap
     private $_isHtml;
     private $_elementId;
     private $_elementDelimiter;
+    private $_isNeatline;
 
     /**
      * @param string $columnName
@@ -46,6 +47,9 @@ class CsvImport_ColumnMap_Element extends CsvImport_ColumnMap
         } else {
             $text = $row[$this->_columnName];
         }
+        if($this->_isNeatline) {
+            $text = $this->_degrees_to_meters($text);
+        }
         if ($this->_elementDelimiter == '') {
             $texts = array($text);
         } else {
@@ -61,6 +65,22 @@ class CsvImport_ColumnMap_Element extends CsvImport_ColumnMap
         return $result;
     }
 
+    public function _degrees_to_meters($text)
+    {
+        $text = str_replace(' ', '', $text);
+        $values = explode(",", $text);
+        $lat = $values[0];
+        $lon = $values[1];
+        $lat = log(tan((90 + $lat) * pi() / 360)) / (pi() / 180);
+
+        $lon_new = $lon * 20037508.34 / 180;
+        $lat_new = $lat * 20037508.34 / 180;
+
+        $ret = "POINT($lon_new $lat_new)";
+
+        return $ret;
+    }
+
     /**
      * Sets the mapping options.
      *
@@ -70,6 +90,7 @@ class CsvImport_ColumnMap_Element extends CsvImport_ColumnMap
     {
         $this->_elementId = $options['elementId'];
         $this->_isHtml = (boolean)$options['isHtml'];
+        $this->_isNeatline = (boolean)$options['isNeatline'];
     }
 
     /**
