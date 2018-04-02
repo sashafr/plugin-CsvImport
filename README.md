@@ -1,4 +1,4 @@
-# CsvImportPenn
+# CsvImport Plugin with Neatline Coverage
 
 Allows users to import items from a simple CSV (comma separated values) file, and then map the CSV column data to multiple elements, files, tags, and/or coordinates. Each row in the file represents metadata for a single item. 
 This plugin is useful for exporting data from one database and importing that data into an Omeka site. This plugin extends the functionality of [Omeka's CsvImport plugin](https://github.com/omeka/plugin-CsvImport) by converting traditional latitude/longitude coordinates into a format that is importable to Neatline. 
