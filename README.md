@@ -18,6 +18,7 @@ Once you have an Omeka Classic site up and running, you must clone the CsvImport
 ```
 cd /var/www/html/plugins
 git clone https://github.com/upenndigitalscholarship/plugin-CsvImport.git
+mv plugin-CsvImport CsvImport
 ```
 
 Once your have cloned the repository into your plugins folder, simply visit the admin page of your Omeka site and navigate to the plugins page, which should be in the top right navigation bar.  You should see CsvImport listed on this page and can install it by pressing the install button to the right of the plugin.  
