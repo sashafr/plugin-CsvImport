@@ -16,7 +16,7 @@ Once you have an Omeka Classic site up and running, you must clone the CsvImport
 
 
 ```
-cd var/www/html/plugins
+cd /var/www/html/plugins
 git clone https://github.com/upenndigitalscholarship/plugin-CsvImport.git
 ```
 
