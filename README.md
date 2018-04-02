@@ -45,5 +45,5 @@ Import the file and confirm that the import is successful and the items have bee
 * **Haoran Shao** - *Neatline Coverage* 
 * **Breanna Porter** - *Refactoring for general use* - [Breanna](https://github.com/breannamporter)
 
-See also the list of [contributors](https://github.com/upenndigitalscholarship/CsvImportPenn) who participated in this project.
+See also the list of [contributors](https://github.com/upenndigitalscholarship/plugin-CsvImport/graphs/contributors) who participated in this project.
 
